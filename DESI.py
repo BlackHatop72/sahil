@@ -120,8 +120,9 @@ def send_welcome(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
     btn_attack = types.KeyboardButton('🚀 Attack')
     markup.row(btn_attack)
+    btn_reseller = types.KeyboardButton('💼 ResellerShip')
     btn_info = types.KeyboardButton('ℹ️ My Info')
-    markup.row(btn_info)
+    markup.row(btn_reseller, btn_info)
     
     bot.send_message(message.chat.id, welcome_message, reply_markup=markup)
 
@@ -303,7 +304,7 @@ def handle_my_info_button(message):
 
 @bot.message_handler(func=lambda message: message.text == '💼 ResellerShip')
 def handle_buy_access_button(message):
-    response = (f"Contact @LEGENDVIPOP for reseller ship")
+    response = (f"Contact @BlackHatDDoS for reseller ship")
     bot.send_message(message.chat.id, response)
 
 
